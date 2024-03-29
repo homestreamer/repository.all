@@ -1,3 +1,3 @@
 git add .
-git commit  -m "first commit"
+git commit  -m "finalized"
 git push -u origin master
