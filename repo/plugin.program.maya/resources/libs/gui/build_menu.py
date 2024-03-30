@@ -91,7 +91,7 @@ class BuildMenu:
             directory.add_file('{0}'.format(CONFIG.BUILDFILE), icon=CONFIG.ICONBUILDS, themeit=CONFIG.THEME3)
             return
 
-        total, count17, count18, adultcount, hidden = check.build_count()
+        total, count21, count20, count19, adultcount, hidden = check.build_count()
 
         match = re.compile('name="(.+?)".+?ersion="(.+?)".+?rl="(.+?)".+?ui="(.+?)".+?odi="(.+?)".+?heme="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult="(.+?)".+?escription="(.+?)"').findall(link)
         
@@ -113,18 +113,24 @@ class BuildMenu:
             if CONFIG.SEPARATE == 'true':
                 self._list_all(match)
             else:
-                if count18 > 0:
-                    state = '+' if CONFIG.SHOW18 == 'false' else '-'
-                    directory.add_file('[B]{0} Leia Builds ({1})[/B]'.format(state, count18), {'mode': 'togglesetting', 'name': 'show18'},
-                                       themeit=CONFIG.THEME3)
-                    if CONFIG.SHOW18 == 'true':
-                        self._list_all(match, kodiv=18)
-                if count17 > 0:
-                    state = '+' if CONFIG.SHOW17 == 'false' else '-'
-                    directory.add_file('[B]{0} Krypton Builds ({1})[/B]'.format(state, count17), {'mode': 'togglesetting',
-                                       'name': 'show17'}, themeit=CONFIG.THEME3)
-                    if CONFIG.SHOW17 == 'true':
-                        self._list_all(match, kodiv=17)
+                if count21 > 0:
+                    state = '+' if CONFIG.SHOW21 == 'false' else '-'
+                    directory.add_file('[B]{0} Omega Builds ({1})[/B]'.format(state, count21), {'mode': 'togglesetting',
+                                       'name': 'show21'}, themeit=CONFIG.THEME3)
+                    if CONFIG.SHOW21 == 'true':
+                        self._list_all(match, kodiv=21)
+                if count20 > 0:
+                    state = '+' if CONFIG.SHOW20 == 'false' else '-'
+                    directory.add_file('[B]{0} Nexus Builds ({1})[/B]'.format(state, count20), {'mode': 'togglesetting',
+                                       'name': 'show20'}, themeit=CONFIG.THEME3)
+                    if CONFIG.SHOW20 == 'true':
+                        self._list_all(match, kodiv=20)
+                if count19 > 0:
+                    state = '+' if CONFIG.SHOW19 == 'false' else '-'
+                    directory.add_file('[B]{0} Matrix Builds ({1})[/B]'.format(state, count19), {'mode': 'togglesetting',
+                                       'name': 'show19'}, themeit=CONFIG.THEME3)
+                    if CONFIG.SHOW19 == 'true':
+                        self._list_all(match, kodiv=19)
 
         elif hidden > 0:
             if adultcount > 0:

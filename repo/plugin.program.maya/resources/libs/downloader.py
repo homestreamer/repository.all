@@ -36,7 +36,7 @@ class Downloader:
         self.progress_dialog = xbmcgui.DialogProgress()
 
     def download(self, url, dest):
-        self.progress_dialog.create(CONFIG.ADDONTITLE, "Downloading Content", ' ', ' ')
+        self.progress_dialog.create(CONFIG.ADDONTITLE, "Downloading Content")
         self.progress_dialog.update(0)
         
         path = os.path.split(dest)[0]
@@ -84,4 +84,4 @@ class Downloader:
                     div = divmod(eta, 60)
                     speed += '[B]ETA:[/B] [COLOR %s]%02d:%02d[/COLOR][/COLOR]' % (CONFIG.COLOR1, div[0], div[1])
                     
-                    self.progress_dialog.update(done, '', currently_downloaded, speed)
+                    self.progress_dialog.update(done, '\n' + str(currently_downloaded) + '\n' + str(speed)) 

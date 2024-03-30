@@ -17,10 +17,10 @@ ADDONTITLE = 'Maya'
 BUILDERNAME = 'Maya'
 EXCLUDES = [ADDON_ID, 'repository.maya']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'http://'
+BUILDFILE = 'http://
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
-UPDATECHECK = 1
+UPDATECHECK = 0
 # Text File with apk info in it.  Leave as 'http://' to ignore
 APKFILE = 'http://'
 # Text File with Youtube Videos urls.  Leave as 'http://' to ignore
@@ -60,10 +60,10 @@ SPACER = '='
 
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
-COLOR1 = 'black'
+COLOR1 = 'crimson'
 COLOR2 = 'white'
 # Primary menu items   / {0} is the menu item and is required
-THEME1 = u'[COLOR {color1}][I]([COLOR {color1}][B]Open[/B][/COLOR][COLOR {color2}]Wizard[COLOR {color1}])[/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
+THEME1 = u'[COLOR {color1}][I]([COLOR {color1}][B]Maya[/B][/COLOR][COLOR {color2}]-[COLOR {color1}])[/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
 # Build Names          / {0} is the menu item and is required
 THEME2 = u'[COLOR {color1}]{{}}[/COLOR]'.format(color1=COLOR1)
 # Alternate items      / {0} is the menu item and is required
@@ -77,17 +77,17 @@ THEME5 = u'[COLOR {color1}]Current Theme:[/COLOR] [COLOR {color2}]{{}}[/COLOR]'.
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT = 'No'
 # You can add \n to do line breaks
-CONTACT = 'Home Theatre Universal.\n\nContact us on Github at http://www.github.com/homestreamer/plugin.program.hometheatre/'
+CONTACT = 'Universal Experience \n\nContact us on Discord: @homestreamingboxpi'
 # Images used for the contact window.  http:// for default icon and fanart
 CONTACTICON = os.path.join(ART, 'qricon.png')
-CONTACTFANART = 'https://raw.githubusercontent.com/homestreamer/plugin.program.hometheatre/master/fanart.jpg'
+CONTACTFANART = 'http://'
 #########################################################
 
 #########################################################
 #        Auto Update For Those With No Repo             #
 #########################################################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE = 'Yes'
+AUTOUPDATE = 'No'
 #########################################################
 
 #########################################################
@@ -98,7 +98,7 @@ AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.maya'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'https://raw.githubusercontent.com/homestreamer/repository.maya/master/zips/addons.xml'
+REPOADDONXML = 'https://raw.githubusercontent.com/homestreamer/repository.maya/master/repo/zips/addons.xml'
 # Url to folder zip is located in
 REPOZIPURL = 'https://raw.githubusercontent.com/homestreamer/repository.maya/master/zips/repository.maya/'
 #########################################################
@@ -114,7 +114,7 @@ NOTIFICATION = 'http://'
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR limegreen][B]Open[/B][/COLOR]Wizard'
+HEADERMESSAGE = '[COLOR crimson][B]Ragnarok[/B][/COLOR]Wizard'
 # url to image if using Image 424x180
 HEADERIMAGE = 'http://'
 # Font for Notification Window

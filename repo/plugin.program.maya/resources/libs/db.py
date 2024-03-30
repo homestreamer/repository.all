@@ -130,8 +130,7 @@ def force_check_updates(auto=False, over=False):
                 
                 if lastcheck:
                     checked_time = lastcheck.fetchone()[0]
-                    if checked_time:
-                        checked_time = time.mktime(time.strptime(checked_time, '%Y-%m-%d %H:%M:%S'))
+                    checked_time = time.mktime(time.strptime(checked_time, '%Y-%m-%d %H:%M:%S')) if checked_time else 0
                     
                 xbmc.sleep(1000)
             checked_time = 0
@@ -271,15 +270,12 @@ def toggle_addon(id, value, over=None):
     response = xbmc.executeJSONRPC(query)
     
     if 'error' in response and over is None:
-        from resources.libs import update
-        
         dialog = xbmcgui.Dialog()
         
         v = 'Enabling' if value == 'true' else 'Disabling'
         dialog.ok(CONFIG.ADDONTITLE,
-                      "[COLOR {0}]Error {1} [COLOR {2}]{3}[/COLOR]".format(CONFIG.COLOR2, v, CONFIG.COLOR1, id),
+                      "[COLOR {0}]Error {1} [COLOR {2}]{3}[/COLOR]".format(CONFIG.COLOR2, v, CONFIG.COLOR1, id) + '\n' +
                       "Check to make sure the add-on list is up to date and try again.[/COLOR]")
-        update.force_update()
 
 
 def toggle_dependency(name, dp=None):
@@ -517,7 +513,7 @@ def find_binary_addons(addon='all'):
         xml = os.path.join(CONFIG.ADDONS, addon, 'addon.xml')
         
         if os.path.exists(xml):
-            logging.log('Checking {0}'.format(xml), level=xbmc.LOGNOTICE)
+            logging.log('Checking {0}'.format(xml), level=xbmc.LOGINFO)
             root = ElementTree.parse(xml).getroot()
             addonid = root.get('id')
             addonname = root.get('name')

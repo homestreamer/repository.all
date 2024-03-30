@@ -66,8 +66,7 @@ def wipe():
     
     update.addon_updates('set')
     xbmcPath = os.path.abspath(CONFIG.HOME)
-    progress_dialog.create(CONFIG.ADDONTITLE,
-                  "[COLOR {0}]Calculating files and folders".format(CONFIG.COLOR2), '', 'Please Wait![/COLOR]')
+    progress_dialog.create(CONFIG.ADDONTITLE, "[COLOR {0}]Calculating files and folders".format(CONFIG.COLOR2) + '\n' + '\n' + 'Please Wait![/COLOR]')
     total_files = sum([len(files) for r, d, files in os.walk(xbmcPath)])
     del_file = 0
     progress_dialog.update(0, "[COLOR {0}]Gathering Excludes list.[/COLOR]".format(CONFIG.COLOR2))
@@ -138,8 +137,7 @@ def wipe():
                         logging.log("-> {0}".format(str(e)))
                         db.purge_db_file(os.path.join(root, name))
             else:
-                progress_dialog.update(int(tools.percentage(del_file, total_files)), '',
-                              '[COLOR {0}]File: [/COLOR][COLOR {1}]{2}[/COLOR]'.format(CONFIG.COLOR2, CONFIG.COLOR1, name), '')
+                progress_dialog.update(int(tools.percentage(del_file, total_files)), '\n' + '[COLOR {0}]File: [/COLOR][COLOR {1}]{2}[/COLOR]'.format(CONFIG.COLOR2, CONFIG.COLOR1, name))
                 try:
                     os.remove(os.path.join(root, name))
                 except Exception as e:
@@ -153,8 +151,7 @@ def wipe():
     for root, dirs, files in os.walk(xbmcPath, topdown=True):
         dirs[:] = [d for d in dirs if d not in exclude_dirs]
         for name in dirs:
-            progress_dialog.update(100, '',
-                          'Cleaning Up Empty Folder: [COLOR {0}]{1}[/COLOR]'.format(CONFIG.COLOR1, name), '')
+            progress_dialog.update(100, '\n' + 'Cleaning Up Empty Folder: [COLOR {0}]{1}[/COLOR]'.format(CONFIG.COLOR1, name))
             if name not in ["Database", "userdata", "temp", "addons", "addon_data"]:
                 shutil.rmtree(os.path.join(root, name), ignore_errors=True, onerror=None)
         if progress_dialog.iscanceled():
@@ -194,23 +191,19 @@ def fresh_start(install=None, over=False):
 
     elif install == 'restore':
         yes_pressed = dialog.yesno(CONFIG.ADDONTITLE,
-                                       "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2),
-                                       "Kodi configuration to default settings",
-                                       "Before installing the local backup?[/COLOR]",
+                                       "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2)
+                                       +'\n'+"Kodi configuration to default settings"
+                                       +'\n'+"Before installing the local backup?[/COLOR]",
                                        nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',
                                        yeslabel='[B][COLOR springgreen]Continue[/COLOR][/B]')
     elif install:
-        yes_pressed = dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2),
-                                       "Kodi configuration to default settings",
-                                       "Before installing [COLOR {0}]{1}[/COLOR]?".format(CONFIG.COLOR1, install),
+        yes_pressed = dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2)
+                                       +'\n'+"Kodi configuration to default settings"
+                                       +'\n'+"Before installing [COLOR {0}]{1}[/COLOR]?".format(CONFIG.COLOR1, install),
                                        nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',
                                        yeslabel='[B][COLOR springgreen]Continue[/COLOR][/B]')
     else:
-        yes_pressed = dialog.yesno(CONFIG.ADDONTITLE,
-                                       "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2),
-                                       "Kodi configuration to default settings?[/COLOR]",
-                                       nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',
-                                       yeslabel='[B][COLOR springgreen]Continue[/COLOR][/B]')
+        yes_pressed = dialog.yesno(CONFIG.ADDONTITLE, "[COLOR {0}]Do you wish to restore your".format(CONFIG.COLOR2) +' \n' + "Kodi configuration to default settings?[/COLOR]", nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR springgreen]Continue[/COLOR][/B]')
     if yes_pressed:
         wipe()
         
@@ -287,8 +280,8 @@ def install_apk(name, url):
             yes = False
         else:
             yes = dialog.yesno(CONFIG.ADDONTITLE,
-                                   "[COLOR {0}]Would you like to download and install: ".format(CONFIG.COLOR2),
-                                   "[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, name),
+                                   "[COLOR {0}]Would you like to download and install: ".format(CONFIG.COLOR2)
+                                   +'\n'+"[COLOR {0}]{1}[/COLOR]".format(CONFIG.COLOR1, name),
                                    yeslabel="[B][COLOR springgreen]Download[/COLOR][/B]",
                                    nolabel="[B][COLOR red]Cancel[/COLOR][/B]")
                                    
@@ -305,8 +298,9 @@ def install_apk(name, url):
                 return
                 
             progress_dialog.create(CONFIG.ADDONTITLE,
-                          '[COLOR {0}][B]Downloading:[/B][/COLOR] [COLOR {1}]{2}[/COLOR]'.format(CONFIG.COLOR2, CONFIG.COLOR1, apk),
-                          '', 'Please Wait')
+                          '[COLOR {0}][B]Downloading:[/B][/COLOR] [COLOR {1}]{2}[/COLOR]'.format(CONFIG.COLOR2, CONFIG.COLOR1, apk)
+                          +'\n'+''
+                          +'\n'+'Please Wait')
             
             try:
                 os.remove(lib)
@@ -318,7 +312,7 @@ def install_apk(name, url):
                 
         dialog.ok(CONFIG.ADDONTITLE, '[COLOR {}]{}[/COLOR] downloaded to [COLOR {}]{}[/COLOR]. If installation doesn\'t start by itself, navigate to that location to install the APK.'.format(CONFIG.COLOR1, apk, CONFIG.COLOR1, path))
         
-        logging.log('Opening {} with {}'.format(lib, use_manager), level=xbmc.LOGNOTICE)
+        logging.log('Opening {} with {}'.format(lib, use_manager), level=xbmc.LOGINFO)
         xbmc.executebuiltin('StartAndroidActivity({},,,"content://{}")'.format(use_manager, lib))
     else:
         logging.log_notify(CONFIG.ADDONTITLE,
