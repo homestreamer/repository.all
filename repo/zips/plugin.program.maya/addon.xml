@@ -16,10 +16,10 @@
     
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Maya</summary>
-        <description lang="en">Home Streaming Universal</description>
+        <description lang="en">Universal Experience</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://github.com/homestreamer/plugin.program.homestreamer/</source>
+        <source>https://github.com/homestreamer/plugin.program.maya/</source>
         <news>
 2.1.0
  - Add support for Kodi v21 (Omega)
