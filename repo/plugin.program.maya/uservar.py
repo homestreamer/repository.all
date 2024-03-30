@@ -60,7 +60,7 @@ SPACER = '='
 
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
-COLOR1 = 'crimson'
+COLOR1 = 'black'
 COLOR2 = 'white'
 # Primary menu items   / {0} is the menu item and is required
 THEME1 = u'[COLOR {color1}][I]([COLOR {color1}][B]Maya[/B][/COLOR][COLOR {color2}]-[COLOR {color1}])[/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
@@ -87,7 +87,7 @@ CONTACTFANART = 'http://'
 #        Auto Update For Those With No Repo             #
 #########################################################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE = 'No'
+AUTOUPDATE = 'Yes'
 #########################################################
 
 #########################################################
@@ -107,14 +107,14 @@ REPOZIPURL = 'https://raw.githubusercontent.com/homestreamer/repository.maya/mas
 #        Notification Window                            #
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE = 'No'
+ENABLE = 'Yes'
 # Url to notification file
 NOTIFICATION = 'http://'
 # Use either 'Text' or 'Image'
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR crimson][B]Ragnarok[/B][/COLOR]Wizard'
+HEADERMESSAGE = 'Maya'
 # url to image if using Image 424x180
 HEADERIMAGE = 'http://'
 # Font for Notification Window
