@@ -17,7 +17,7 @@ ADDONTITLE = 'Maya'
 BUILDERNAME = 'Maya'
 EXCLUDES = [ADDON_ID, 'repository.maya']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'http://
+BUILDFILE = 'http://'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
