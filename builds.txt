@@ -4,7 +4,7 @@ zip="url.to.wizard"
 
 name="TV"
 version="1.0"
-url="https://www.dropbox.com/scl/fi/6v6m7rrs6qfb4mqmzxo64/HomeTV.zip?rlkey=58ejxzsayaw7da8vum6tmz6vk&dl=0"
+url="https://www.dropbox.com/scl/fi/6v6m7rrs6qfb4mqmzxo64/HomeTV.zip?rlkey=58ejxzsayaw7da8vum6tmz6vk&dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="20.6"
