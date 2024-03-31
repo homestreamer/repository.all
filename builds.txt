@@ -1,4 +1,9 @@
+id="plugin.program.maya"
+version="1.0.0"
+zip="url.to.wizard"
+
 name="Raspberry Pi"
+version="1.0"
 url="https://www.dropbox.com/scl/fi/ah088zidx2n43czw1nvph/RPi.zip?rlkey=h53wttgrxfbltx93g3dpyvhlp&dl=1"
 minor="http://"
 gui="url.to.guisettings"
@@ -12,6 +17,7 @@ info="https://dl.dropboxusercontent.com/scl/fi/ksdbizi8t7z2yvzi7exq3/RPi.txt?rlk
 description="For Raspberry Pi 3..."
 
 name="Horizon"
+version="1.0"
 url="https://www.dropbox.com/scl/fi/ah088zidx2n43czw1nvph/RPi.zip?rlkey=h53wttgrxfbltx93g3dpyvhlp&dl=0"
 minor="http://"
 gui="url.to.guisettings"
@@ -25,6 +31,7 @@ info="url.to.info"
 description="Coming soon"
 
 name="Fusion"
+version="1.0"
 url="https://www.dropbox.com/scl/fi/ah088zidx2n43czw1nvph/RPi.zip?rlkey=h53wttgrxfbltx93g3dpyvhlp&dl=0"
 minor="http://"
 gui="url.to.guisettings"
@@ -38,6 +45,7 @@ info="url.to.info"
 description="Coming Soon"
 
 name="Netflix"
+version="1.0"
 url="https://www.dropbox.com/scl/fi/ah088zidx2n43czw1nvph/RPi.zip?rlkey=h53wttgrxfbltx93g3dpyvhlp&dl=0"
 minor="http://"
 gui="url.to.guisettings"
