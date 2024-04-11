@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="[https://picsum.photos/460/300](https://github.com/homestreamer/repository.maya/blob/master/repo/plugin.program.maya/fanart.jpg?raw=true)">
+  <img width="460" height="300" src="https://github.com/homestreamer/repository.maya/blob/master/repo/plugin.program.maya/fanart.jpg?raw=true">
 </p>
 
 ### Installation & Updates
